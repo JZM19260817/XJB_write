@@ -1,0 +1,26 @@
+.App {
+  background-color: white;
+  text-align: center;
+}
+.Text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Title{
+  color: red;
+  font-size: 40px;
+}
+.describe{
+  color:#333333;
+  font-size: 25px;
+}
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
