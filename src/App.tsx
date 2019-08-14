@@ -21,7 +21,8 @@ class App extends React.Component {
                         />
                         ):(
                         <div>
-                            <div style={{textAlign:"center",fontSize:"30px"}}>评测题目</div>
+                            <div style={{textAlign:"center",fontSize:"40px",color:"red"}}>症状自评量表SCL-90</div>
+                            <div style={{textAlign:"center",fontSize:"16px"}}>1,2,3,4,5分别代表没有、很轻、中等、偏重、严重</div>
                             <TiMu />
                         </div>
                     )

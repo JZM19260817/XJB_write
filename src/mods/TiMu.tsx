@@ -5,30 +5,31 @@ import {des} from './describe';
 import './css/timu.css';
 
 export default class TiMu extends React.Component {
-    state={
-        arr:des,
+    state = {
+        arr: des,
     };
     changeValue = (e: any, describeId: any) => {
-       const arr = [...this.state.arr];
-       const newArr = arr.map(a => {
-           if (a.id === describeId) {
-               a.value = e.target.value;
-           }
-           return a;
-       });
-       this.setState({
-           arr: newArr,
-       });
+        const arr = [...this.state.arr];
+        const newArr = arr.map(a => {
+            if (a.id === describeId) {
+                a.value = e.target.value;
+            }
+            return a;
+        });
+        this.setState({
+            arr: newArr,
+        });
     };
+
     render() {
-        const { arr } = this.state;
-        console.error(arr);
+        const {arr} = this.state;
+        console.log(arr);
         return (
             <div className="testPage">
                 {
                     arr.map((describes) => (
                         <div>
-                            <div>{describes.describtion}</div>
+                            <div>{describes.id}:{describes.describtion}</div>
                             <Radio.Group onChange={(e) => this.changeValue(e, describes.id)}>
                                 <Radio value={1}>1</Radio>
                                 <Radio value={2}>2</Radio>
@@ -39,7 +40,7 @@ export default class TiMu extends React.Component {
                         </div>
                     ))
                 }
-                <Button type="danger">完成测试</Button>
+                <Button type={"danger"}>完成测试</Button>
             </div>
         );
     }

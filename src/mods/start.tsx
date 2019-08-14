@@ -14,7 +14,7 @@ export default class Start extends React.Component<props> {
         if (onShow) {
             return (
                 <div className="App">
-                    <div className="Text">
+                    <div>
                         <div className="Title">
                             心理状态评测
                         </div>
