@@ -3,10 +3,13 @@ import {Button, Radio} from 'antd';
 import 'antd/dist/antd.css';
 import {des} from './describe';
 import './css/timu.css';
+import _ from 'lodash';
+import Result from './Result';
 
 export default class TiMu extends React.Component {
     state = {
         arr: des,
+        curPage:'TiMu',
     };
     changeValue = (e: any, describeId: any) => {
         const arr = [...this.state.arr];
@@ -21,10 +24,27 @@ export default class TiMu extends React.Component {
         });
     };
 
+    onCheckFinish(){
+        if(_.find(this.state.arr,{value:0})!==undefined)
+        {
+            alert(1);
+            return false;
+        }
+        return true;
+    }
+    onFinishClick(){
+        if(this.onCheckFinish()) {
+            this.setState({
+               curPage:"Result",
+            });
+        }
+        return;
+    }
     render() {
         const {arr} = this.state;
         console.log(arr);
         return (
+            this.state.curPage==="TiMu"?(
             <div className="testPage">
                 {
                     arr.map((describes) => (
@@ -40,8 +60,18 @@ export default class TiMu extends React.Component {
                         </div>
                     ))
                 }
-                <Button type={"danger"}>完成测试</Button>
+                <Button
+                    type={"danger"}
+                    onClick={this.onFinishClick.bind(this)}
+                >
+                    完成测试
+                </Button>
             </div>
+            ):(
+                <Result
+                    arr={this.state.arr}
+                />
+            )
         );
     }
 }
