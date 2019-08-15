@@ -13,6 +13,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
+                <script>window.parent.postMessage(object,'*');</script>
                 {
                     this.state.visible?(
                         <Start

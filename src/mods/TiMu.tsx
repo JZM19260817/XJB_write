@@ -47,7 +47,7 @@ export default class TiMu extends React.Component {
     }
     render() {
         const {arr} = this.state;
-        console.log(arr);
+        // console.log(arr);
         return (
             this.state.curPage==="TiMu"?(
             <div className="testPage">
