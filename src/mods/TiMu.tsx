@@ -13,10 +13,15 @@ export default class TiMu extends React.Component {
     };
     changeValue = (e: any, describeId: any) => {
         const arr = [...this.state.arr];
-        const newArr = arr.map(a => {
-            if (a.id === describeId) {
-                a.value = e.target.value;
-            }
+        // const newArr = arr.map(a => {
+        //     if (a.id === describeId) {
+        //         a.value = e.target.value;
+        //     }
+        //     return a;
+        // });
+        //测试状态
+        const newArr=arr.map(a=>{
+            a.value=3;
             return a;
         });
         this.setState({
@@ -27,7 +32,7 @@ export default class TiMu extends React.Component {
     onCheckFinish(){
         if(_.find(this.state.arr,{value:0})!==undefined)
         {
-            alert(1);
+            alert("还有题目未完成");
             return false;
         }
         return true;
